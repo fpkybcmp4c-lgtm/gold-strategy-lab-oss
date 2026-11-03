@@ -1,0 +1,36 @@
+{
+  "name": "gold-strategy-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "dev": "node scripts/start.mjs --dev",
+    "build": "next build --webpack",
+    "start": "node scripts/start.mjs",
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "security:scan": "node scripts/security-scan.mjs",
+    "backup": "node scripts/backup.mjs",
+    "restore": "node scripts/restore.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.4",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "lucide-react": "1.31.0",
+    "recharts": "3.8.0",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "typescript": "5.9.3"
+  }
+}

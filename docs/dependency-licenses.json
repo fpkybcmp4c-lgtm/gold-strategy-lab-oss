@@ -1,0 +1,470 @@
+{
+  "scope": "Installed Windows x64 dependency manifests; platform optional dependencies may differ",
+  "nodeMajor": 24,
+  "packages": [
+    {
+      "name": "@img/colour",
+      "version": "1.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/lovell/colour"
+    },
+    {
+      "name": "@img/sharp-win32-x64",
+      "version": "0.35.5",
+      "license": "Apache-2.0 AND LGPL-3.0-or-later",
+      "repository": "https://github.com/lovell/sharp",
+      "homepage": "https://sharp.pixelplumbing.com"
+    },
+    {
+      "name": "@next/env",
+      "version": "16.4.4",
+      "license": "MIT",
+      "repository": "https://github.com/vercel/next.js"
+    },
+    {
+      "name": "@next/swc-win32-x64-msvc",
+      "version": "16.4.4",
+      "license": "MIT",
+      "repository": "https://github.com/vercel/next.js"
+    },
+    {
+      "name": "@reduxjs/toolkit",
+      "version": "2.13.0",
+      "license": "MIT",
+      "repository": "https://github.com/reduxjs/redux-toolkit",
+      "homepage": "https://redux-toolkit.js.org"
+    },
+    {
+      "name": "@standard-schema/spec",
+      "version": "1.1.0",
+      "license": "MIT",
+      "repository": "https://github.com/standard-schema/standard-schema",
+      "homepage": "https://standardschema.dev"
+    },
+    {
+      "name": "@standard-schema/utils",
+      "version": "0.3.0",
+      "license": "MIT",
+      "repository": "https://github.com/standard-schema/standard-schema"
+    },
+    {
+      "name": "@swc/helpers",
+      "version": "0.5.23",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/swc-project/swc",
+      "homepage": "https://swc.rs"
+    },
+    {
+      "name": "@types/d3-array",
+      "version": "3.2.2",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-array"
+    },
+    {
+      "name": "@types/d3-color",
+      "version": "3.1.3",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-color"
+    },
+    {
+      "name": "@types/d3-ease",
+      "version": "3.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-ease"
+    },
+    {
+      "name": "@types/d3-interpolate",
+      "version": "3.0.4",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-interpolate"
+    },
+    {
+      "name": "@types/d3-path",
+      "version": "3.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-path"
+    },
+    {
+      "name": "@types/d3-scale",
+      "version": "4.0.9",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-scale"
+    },
+    {
+      "name": "@types/d3-shape",
+      "version": "3.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-shape"
+    },
+    {
+      "name": "@types/d3-time",
+      "version": "3.0.4",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-time"
+    },
+    {
+      "name": "@types/d3-timer",
+      "version": "3.0.2",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/d3-timer"
+    },
+    {
+      "name": "@types/node",
+      "version": "24.19.2",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node"
+    },
+    {
+      "name": "@types/react",
+      "version": "19.2.14",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react"
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "19.2.3",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-dom"
+    },
+    {
+      "name": "@types/use-sync-external-store",
+      "version": "0.0.6",
+      "license": "MIT",
+      "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+      "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/use-sync-external-store"
+    },
+    {
+      "name": "baseline-browser-mapping",
+      "version": "2.11.34",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/web-platform-dx/baseline-browser-mapping"
+    },
+    {
+      "name": "caniuse-lite",
+      "version": "1.0.30001820",
+      "license": "CC-BY-4.0",
+      "repository": "browserslist/caniuse-lite"
+    },
+    {
+      "name": "client-only",
+      "version": "0.0.1",
+      "license": "MIT",
+      "homepage": "https://reactjs.org/"
+    },
+    {
+      "name": "clsx",
+      "version": "2.1.1",
+      "license": "MIT",
+      "repository": "lukeed/clsx"
+    },
+    {
+      "name": "csstype",
+      "version": "3.2.3",
+      "license": "MIT",
+      "repository": "https://github.com/frenic/csstype"
+    },
+    {
+      "name": "d3-array",
+      "version": "3.2.4",
+      "license": "ISC",
+      "repository": "https://github.com/d3/d3-array",
+      "homepage": "https://d3js.org/d3-array/"
+    },
+    {
+      "name": "d3-color",
+      "version": "3.1.0",
+      "license": "ISC",
+      "repository": "https://github.com/d3/d3-color",
+      "homepage": "https://d3js.org/d3-color/"
+    },
+    {
+      "name": "d3-ease",
+      "version": "3.0.1",
+      "license": "BSD-3-Clause",
+      "repository": "https://github.com/d3/d3-ease",
+      "homepage": "https://d3js.org/d3-ease/"
+    },
+    {
+      "name": "d3-format",
+      "version": "3.1.2",
+      "license": "ISC",
+      "repository": "https://github.com/d3/d3-format",
+      "homepage": "https://d3js.org/d3-format/"
+    },
+    {
+      "name": "d3-interpolate",
+      "version": "3.0.1",
+      "license": "ISC",
+      "repository": "https://github.com/d3/d3-interpolate",
+      "homepage": "https://d3js.org/d3-interpolate/"
+    },
+    {
+      "name": "d3-path",
+      "version": "3.1.0",
+      "license": "ISC",
+      "repository": "https://github.com/d3/d3-path",
+      "homepage": "https://d3js.org/d3-path/"
+    },
+    {
+      "name": "d3-scale",
+      "version": "4.0.2",
+      "license": "ISC",
+      "repository": "https://github.com/d3/d3-scale",
+      "homepage": "https://d3js.org/d3-scale/"
+    },
+    {
+      "name": "d3-shape",
+      "version": "3.2.0",
+      "license": "ISC",
+      "repository": "https://github.com/d3/d3-shape",
+      "homepage": "https://d3js.org/d3-shape/"
+    },
+    {
+      "name": "d3-time",
+      "version": "3.1.0",
+      "license": "ISC",
+      "repository": "https://github.com/d3/d3-time",
+      "homepage": "https://d3js.org/d3-time/"
+    },
+    {
+      "name": "d3-time-format",
+      "version": "4.1.0",
+      "license": "ISC",
+      "repository": "https://github.com/d3/d3-time-format",
+      "homepage": "https://d3js.org/d3-time-format/"
+    },
+    {
+      "name": "d3-timer",
+      "version": "3.0.1",
+      "license": "ISC",
+      "repository": "https://github.com/d3/d3-timer",
+      "homepage": "https://d3js.org/d3-timer/"
+    },
+    {
+      "name": "decimal.js-light",
+      "version": "2.5.1",
+      "license": "MIT",
+      "repository": "https://github.com/MikeMcl/decimal.js-light"
+    },
+    {
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/lovell/detect-libc"
+    },
+    {
+      "name": "es-toolkit",
+      "version": "1.53.1",
+      "license": "MIT",
+      "repository": "https://github.com/toss/es-toolkit",
+      "homepage": "https://es-toolkit.dev"
+    },
+    {
+      "name": "eventemitter3",
+      "version": "5.0.4",
+      "license": "MIT",
+      "repository": "https://github.com/primus/eventemitter3"
+    },
+    {
+      "name": "immer",
+      "version": "11.2.9",
+      "license": "MIT",
+      "repository": "https://github.com/immerjs/immer",
+      "homepage": "https://github.com/immerjs/immer#readme"
+    },
+    {
+      "name": "immer",
+      "version": "10.2.0",
+      "license": "MIT",
+      "repository": "https://github.com/immerjs/immer",
+      "homepage": "https://github.com/immerjs/immer#readme"
+    },
+    {
+      "name": "internmap",
+      "version": "2.0.3",
+      "license": "ISC",
+      "repository": "https://github.com/mbostock/internmap",
+      "homepage": "https://github.com/mbostock/internmap/"
+    },
+    {
+      "name": "lucide-react",
+      "version": "1.31.0",
+      "license": "ISC",
+      "repository": "https://github.com/lucide-icons/lucide",
+      "homepage": "https://lucide.dev"
+    },
+    {
+      "name": "nanoid",
+      "version": "3.3.20",
+      "license": "MIT",
+      "repository": "ai/nanoid"
+    },
+    {
+      "name": "next",
+      "version": "16.4.4",
+      "license": "MIT",
+      "repository": "vercel/next.js",
+      "homepage": "https://nextjs.org"
+    },
+    {
+      "name": "picocolors",
+      "version": "1.1.1",
+      "license": "ISC",
+      "repository": "alexeyraspopov/picocolors"
+    },
+    {
+      "name": "postcss",
+      "version": "8.5.23",
+      "license": "MIT",
+      "repository": "postcss/postcss",
+      "homepage": "https://postcss.org/"
+    },
+    {
+      "name": "react",
+      "version": "19.2.6",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "homepage": "https://react.dev/"
+    },
+    {
+      "name": "react-dom",
+      "version": "19.2.6",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "homepage": "https://react.dev/"
+    },
+    {
+      "name": "react-is",
+      "version": "19.3.1",
+      "license": "MIT",
+      "repository": "https://github.com/react/react",
+      "homepage": "https://react.dev/"
+    },
+    {
+      "name": "react-redux",
+      "version": "9.3.1",
+      "license": "MIT",
+      "repository": "github:reduxjs/react-redux",
+      "homepage": "https://github.com/reduxjs/react-redux"
+    },
+    {
+      "name": "recharts",
+      "version": "3.8.0",
+      "license": "MIT",
+      "repository": "https://github.com/recharts/recharts",
+      "homepage": "https://github.com/recharts/recharts"
+    },
+    {
+      "name": "redux",
+      "version": "5.0.1",
+      "license": "MIT",
+      "repository": "github:reduxjs/redux",
+      "homepage": "http://redux.js.org"
+    },
+    {
+      "name": "redux-thunk",
+      "version": "3.1.0",
+      "license": "MIT",
+      "repository": "github:reduxjs/redux-thunk",
+      "homepage": "https://github.com/reduxjs/redux-thunk"
+    },
+    {
+      "name": "reselect",
+      "version": "5.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/reduxjs/reselect"
+    },
+    {
+      "name": "scheduler",
+      "version": "0.27.0",
+      "license": "MIT",
+      "repository": "https://github.com/facebook/react",
+      "homepage": "https://react.dev/"
+    },
+    {
+      "name": "semver",
+      "version": "7.8.5",
+      "license": "ISC",
+      "repository": "https://github.com/npm/node-semver"
+    },
+    {
+      "name": "sharp",
+      "version": "0.35.5",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/lovell/sharp",
+      "homepage": "https://sharp.pixelplumbing.com"
+    },
+    {
+      "name": "source-map-js",
+      "version": "1.2.2",
+      "license": "BSD-3-Clause",
+      "repository": "7rulnik/source-map-js",
+      "homepage": "https://github.com/7rulnik/source-map-js"
+    },
+    {
+      "name": "styled-jsx",
+      "version": "5.1.6",
+      "license": "MIT",
+      "repository": "vercel/styled-jsx"
+    },
+    {
+      "name": "tiny-invariant",
+      "version": "1.3.3",
+      "license": "MIT",
+      "repository": "https://github.com/alexreardon/tiny-invariant"
+    },
+    {
+      "name": "tslib",
+      "version": "2.9.1",
+      "license": "0BSD",
+      "repository": "https://github.com/Microsoft/tslib",
+      "homepage": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "typescript",
+      "version": "5.9.3",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/microsoft/TypeScript",
+      "homepage": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "undici-types",
+      "version": "7.24.6",
+      "license": "MIT",
+      "repository": "https://github.com/nodejs/undici",
+      "homepage": "https://undici.nodejs.org"
+    },
+    {
+      "name": "use-sync-external-store",
+      "version": "1.7.0",
+      "license": "MIT",
+      "repository": "https://github.com/react/react"
+    },
+    {
+      "name": "victory-vendor",
+      "version": "37.4.1",
+      "license": "MIT AND ISC AND BSD-3-Clause",
+      "repository": "https://github.com/FormidableLabs/victory",
+      "homepage": "https://commerce.nearform.com/open-source/victory"
+    },
+    {
+      "name": "zod",
+      "version": "3.25.76",
+      "license": "MIT",
+      "repository": "https://github.com/colinhacks/zod",
+      "homepage": "https://zod.dev"
+    }
+  ]
+}

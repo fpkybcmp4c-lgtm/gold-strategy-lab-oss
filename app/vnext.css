@@ -1,0 +1,17 @@
+.trade-dialog .vnext-save-actions{flex-wrap:wrap;gap:8px}
+.trade-dialog .vnext-save-actions>span{flex-basis:100%;margin:0;font-size:11px}
+.trade-dialog .vnext-save-actions .button{white-space:normal;text-align:center}
+.trade-dialog .segmented[role=group]{justify-content:flex-start}
+.trade-dialog .segmented[role=group] button{line-height:1.5;min-height:32px;text-align:left}
+.trade-dialog details>summary{cursor:pointer;color:var(--gold);font-size:12px;padding:8px 0}
+.trade-dialog .trade-event>section{padding-top:10px}
+.trade-dialog .quick-close-actions{display:flex;flex-wrap:wrap;gap:7px}
+.trade-dialog .quick-close-actions .button{flex:1 1 95px;padding:8px}
+@media(max-width:600px){
+  .trade-dialog .vnext-save-actions{padding:12px}
+  .trade-dialog .vnext-save-actions .button{flex:1 1 42%;padding:9px 7px;min-height:42px}
+  .trade-dialog .vnext-save-actions>span{display:none}
+  .trade-dialog .form-grid{gap:12px}
+  .trade-dialog .segmented[role=group]{padding:4px}
+  .trade-dialog .segmented[role=group] button{flex:1 1 auto;padding:7px;white-space:normal}
+}
