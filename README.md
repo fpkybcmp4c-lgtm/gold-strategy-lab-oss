@@ -14,7 +14,7 @@ npm install --global pnpm@11.25.0
 pnpm --version
 ```
 
-从 GitHub 的 **Code → Download ZIP** 下载，解压并进入包含 `package.json` 的 `gold-strategy-lab` 目录。也可以使用 Git 克隆仓库。下载源码不包含运行时依赖，首次安装需要联网访问 npm 软件包仓库。
+从 GitHub 的 **Code → Download ZIP** 下载并解压。GitHub 解压目录通常名为 `gold-strategy-lab-oss-main`；可以将它重命名为 `gold-strategy-lab`，再按下面的路径示例操作，也可以直接进入原解压目录。确认当前目录中能看到 `package.json`，不要停留在它的上一级目录。使用 Git 克隆时，可运行 `git clone <仓库地址> gold-strategy-lab` 指定目录名。下载源码不包含运行时依赖，首次安装需要联网访问 npm 软件包仓库。
 
 Windows PowerShell：
 

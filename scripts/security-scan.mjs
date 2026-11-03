@@ -1,5 +1,5 @@
 import { execFileSync } from 'node:child_process';
-import { existsSync, lstatSync, readFileSync, readdirSync, realpathSync } from 'node:fs';
+import { existsSync, lstatSync, readFileSync, readdirSync, realpathSync, statSync } from 'node:fs';
 import { relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -52,6 +52,31 @@ function git(root, args, encoding = 'utf8') {
   return execFileSync('git', ['-C', root, ...args], { encoding, maxBuffer: 128 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'] });
 }
 
+export function sameDirectory(left, right) {
+  // Git and Node can spell the same Windows directory differently (8.3 aliases
+  // or casing). File identity preserves the root boundary without case-folding
+  // distinct directories on a case-sensitive volume.
+  const a = statSync(left, { bigint: true }), b = statSync(right, { bigint: true });
+  if (!a.isDirectory() || !b.isDirectory()) return false;
+  if (a.ino !== 0n && b.ino !== 0n) return a.dev === b.dev && a.ino === b.ino;
+  return realpathSync.native(left) === realpathSync.native(right);
+}
+
+function rootDetectionError(reason) {
+  const error = new Error('Local Git metadata exists but the selected repository root could not be verified (' + reason + ').');
+  error.code = 'GIT_ROOT_UNVERIFIED';
+  error.reason = reason;
+  return error;
+}
+
+function gitFailureReason(error) {
+  const detail = String(error.stderr ?? '');
+  if (/dubious ownership|safe\.directory/i.test(detail)) return 'unsafe-ownership';
+  if (error.code === 'ENOENT') return 'git-unavailable';
+  if (/not a git repository/i.test(detail)) return 'invalid-git-metadata';
+  return 'git-command-failed';
+}
+
 function walk(root, directory = root) {
   const paths = [];
   for (const entry of readdirSync(directory, { withFileTypes: true })) {
@@ -63,9 +88,19 @@ function walk(root, directory = root) {
 }
 
 export function scanRepository(root, { history = true } = {}) {
-  root = realpathSync(root);
+  root = realpathSync.native(root);
+  const metadata = lstatSync(resolve(root, '.git'), { throwIfNoEntry: false });
+  if (metadata?.isSymbolicLink()) throw rootDetectionError('symlinked-git-metadata');
   let ownGit = false;
-  try { ownGit = realpathSync(git(root, ['rev-parse', '--show-toplevel']).trim()) === root; } catch {}
+  let topLevel;
+  try { topLevel = git(root, ['rev-parse', '--show-toplevel']).trim(); }
+  catch (error) { if (metadata) throw rootDetectionError(gitFailureReason(error)); }
+  if (metadata && !topLevel) throw rootDetectionError('missing-root');
+  if (topLevel) {
+    try { ownGit = sameDirectory(root, topLevel); }
+    catch { if (metadata) throw rootDetectionError('root-identity-unreadable'); }
+    if (metadata && !ownGit) throw rootDetectionError('different-root');
+  }
   const findings = [];
   const current = ownGit ? git(root, ['ls-files', '--cached', '--others', '--exclude-standard', '-z']).split('\0').filter(Boolean) : walk(root);
   let checkedFiles = 0, checkedGitObjects = 0;
@@ -96,8 +131,7 @@ export function scanRepository(root, { history = true } = {}) {
     // so removing a secret in a later commit is insufficient to pass this check.
     const objectLines = git(root, ['cat-file', '--batch-all-objects', '--batch-check=%(objectname) %(objecttype) %(objectsize)']).trim().split('\n').filter(Boolean);
     const names = new Map();
-    let named = '';
-    try { named = git(root, ['rev-list', '--objects', '--all', '--reflog']); } catch {}
+    const named = git(root, ['rev-list', '--objects', '--all', '--reflog']);
     for (const line of named.split('\n')) { const space = line.indexOf(' '); if (space > 0) names.set(line.slice(0, space), line.slice(space + 1).replace(/\r$/, '')); }
     for (const line of objectLines) {
       const [oid, type, size] = line.trim().split(' ');
@@ -130,8 +164,9 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     const result = scanRepository(root);
     console.log(JSON.stringify(result, null, 2));
     process.exitCode = result.passed ? 0 : 1;
-  } catch {
-    console.error('Security scan could not finish. Check repository integrity and read permissions. No sensitive match values are printed.');
+  } catch (error) {
+    const diagnostic = error.code === 'GIT_ROOT_UNVERIFIED' ? ' Git root verification: ' + error.reason + '.' : '';
+    console.error('Security scan could not finish.' + diagnostic + ' Check repository integrity and read permissions. No sensitive match values are printed.');
     process.exitCode = 2;
   }
 }

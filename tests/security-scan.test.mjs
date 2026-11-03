@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { mkdirSync, mkdtempSync, rmSync, unlinkSync, writeFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, rmSync, symlinkSync, unlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve, sep } from 'node:path';
-import { scanContent, scanRepository } from '../scripts/security-scan.mjs';
+import { sameDirectory, scanContent, scanRepository } from '../scripts/security-scan.mjs';
 
 function removeFixture(directory) {
   const base = resolve(tmpdir()), target = resolve(directory);
@@ -79,4 +79,31 @@ test('nested Git trees retain full paths for the Demo screenshot allowlist', t =
   const rejected = scanRepository(root);
   assert.equal(rejected.passed, false);
   assert(rejected.findings.some(finding => finding.source.startsWith('git:') && finding.source.endsWith('unreviewed.jpg') && finding.rule === 'unreviewed-binary-attachment'));
+});
+
+test('directory identity accepts aliases but never another repository root', t => {
+  const temporary = mkdtempSync(join(tmpdir(), 'demo-security-'));
+  t.after(() => removeFixture(temporary));
+  const root = join(temporary, 'actual'), sibling = join(temporary, 'sibling'), alias = join(temporary, 'alias');
+  mkdirSync(root); mkdirSync(sibling);
+  symlinkSync(root, alias, process.platform === 'win32' ? 'junction' : 'dir');
+  assert.equal(sameDirectory(root, alias), true);
+  assert.equal(sameDirectory(root, sibling), false);
+  const git = (...args) => execFileSync('git', ['-C', root, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+  git('init', '--initial-branch=main');
+  const detected = scanRepository(alias);
+  assert.equal(detected.gitRepository, true);
+  assert.equal(detected.historyScanned, true);
+  mkdirSync(join(root, 'nested'));
+  const nested = scanRepository(join(root, 'nested'));
+  assert.equal(nested.gitRepository, false, 'An ancestor repository must not be scanned as the selected root');
+  assert.equal(nested.historyScanned, false);
+});
+
+test('existing invalid Git metadata fails closed instead of passing a source-only scan', t => {
+  const root = mkdtempSync(join(tmpdir(), 'demo-security-'));
+  t.after(() => removeFixture(root));
+  mkdirSync(join(root, '.git'));
+  writeFileSync(join(root, 'clean.txt'), 'Demo only');
+  assert.throws(() => scanRepository(root), error => error.code === 'GIT_ROOT_UNVERIFIED' && error.reason === 'invalid-git-metadata');
 });
