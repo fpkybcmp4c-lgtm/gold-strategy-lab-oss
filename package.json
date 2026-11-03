@@ -17,15 +17,16 @@
     "security:scan": "node scripts/security-scan.mjs",
     "backup": "node scripts/backup.mjs",
     "restore": "node scripts/restore.mjs",
-    "smoke": "node scripts/smoke.mjs"
+    "smoke": "node scripts/smoke.mjs",
+    "security:audit": "pnpm audit --audit-level=high"
   },
   "dependencies": {
+    "lucide-react": "1.31.0",
     "next": "16.4.4",
     "react": "19.2.6",
     "react-dom": "19.2.6",
-    "lucide-react": "1.31.0",
     "recharts": "3.8.0",
-    "zod": "3.25.76"
+    "zod": "4.6.6"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

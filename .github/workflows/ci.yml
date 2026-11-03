@@ -30,6 +30,8 @@ jobs:
       - name: Privacy and Git history scan
         run: node scripts/security-scan.mjs
       - run: pnpm install --frozen-lockfile
+      - name: Dependency vulnerability audit
+        run: pnpm audit --audit-level=high
       - run: pnpm test
       - run: pnpm typecheck
       - run: pnpm build

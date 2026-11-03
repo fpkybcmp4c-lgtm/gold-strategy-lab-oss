@@ -461,7 +461,7 @@
     },
     {
       "name": "zod",
-      "version": "3.25.76",
+      "version": "4.6.6",
       "license": "MIT",
       "repository": "https://github.com/colinhacks/zod",
       "homepage": "https://zod.dev"
